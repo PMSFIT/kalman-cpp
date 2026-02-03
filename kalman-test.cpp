@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <vector>
-#include <eigen/Eigen/Dense>
+#include <Eigen/Dense>
 
 #include "kalman.hpp"
 
