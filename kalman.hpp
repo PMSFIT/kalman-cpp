@@ -74,7 +74,7 @@ private:
   Eigen::MatrixXd A, C, Q, R, S, P, K, P0, Q0, R0;
 
   // System dimensions
-  int m, n;
+  Eigen::Index m, n;
 
   // Initial and current time
   double t0, t;
