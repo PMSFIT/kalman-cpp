@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <vector>
-#include <Eigen/Dense>
+#include <eigen/Eigen/Dense>
 
 #include "kalman.hpp"
 
@@ -18,8 +18,8 @@ int main(int argc, char* argv[]) {
 
   double dt = 1.0/30; // Time step
 
-  Eigen::MatrixXd A(n, n); // System dynamics matrix
-  Eigen::MatrixXd C(m, n); // Output matrix
+  Eigen::MatrixXd A(n, n); // System dynamics matrix (F?)
+  Eigen::MatrixXd C(m, n); // Output matrix (H?)
   Eigen::MatrixXd Q(n, n); // Process noise covariance
   Eigen::MatrixXd R(m, m); // Measurement noise covariance
   Eigen::MatrixXd P(n, n); // Estimate error covariance

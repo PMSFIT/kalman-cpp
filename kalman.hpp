@@ -8,7 +8,7 @@
 * @date: 2014.11.15
 */
 
-#include <Eigen/Dense>
+#include <eigen/Eigen/Dense>
 
 #pragma once
 
@@ -65,11 +65,13 @@ public:
   */
   Eigen::VectorXd state() { return x_hat; };
   double time() { return t; };
+  Eigen::VectorXd getQ() { return Q; };
+  double mres_magnitude() { return mres_post_mag; };
 
 private:
 
   // Matrices for computation
-  Eigen::MatrixXd A, C, Q, R, P, K, P0;
+  Eigen::MatrixXd A, C, Q, R, S, P, K, P0, Q0, R0;
 
   // System dimensions
   int m, n;
@@ -88,4 +90,10 @@ private:
 
   // Estimated states
   Eigen::VectorXd x_hat, x_hat_new;
+
+  // Measurement residual for Q-estimation
+  Eigen::VectorXd mres_pre;
+  Eigen::VectorXd mres_post;
+  double mres_pre_mag;
+  double mres_post_mag;
 };
